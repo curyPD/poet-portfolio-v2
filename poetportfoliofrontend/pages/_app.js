@@ -1,13 +1,13 @@
 import "@/styles/globals.css";
 
-import { Raleway, Noto_Serif_Display } from "@next/font/google";
+import { Raleway, Playfair_Display } from "@next/font/google";
 
 const raleway = Raleway({
     subsets: ["cyrillic"],
     variable: "--font-sans",
 });
 
-const notoSerifDisplay = Noto_Serif_Display({
+const notoSerifDisplay = Playfair_Display({
     subsets: ["cyrillic"],
     variable: "--font-serif",
 });
