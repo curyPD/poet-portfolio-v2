@@ -13,6 +13,8 @@ const notoSerifDisplay = Playfair_Display({
 });
 
 export default function App({ Component, pageProps }) {
+    const getLayout = Component.getLayout || ((page) => page);
+
     return (
         <>
             <style jsx global>{`
@@ -21,7 +23,7 @@ export default function App({ Component, pageProps }) {
                     --font-serif: ${notoSerifDisplay.style.fontFamily};
                 }
             `}</style>
-            <Component {...pageProps} />
+            {getLayout(<Component {...pageProps} />)}
         </>
     );
 }

@@ -1,7 +1,9 @@
+import Accordion from "./accordion";
+
 export default function AccordionLayout({ children }) {
     return (
         <>
-            <div>Accordion</div>
+            <Accordion />
             {children}
         </>
     );

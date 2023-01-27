@@ -1,6 +1,15 @@
 import Head from "next/head";
+import Image from "next/image";
 
-export default function Home() {
+import Layout from "@/components/layout";
+
+import { PortableText } from "@portabletext/react";
+
+import { getHomePageAuthor } from "@/lib/sanity.client";
+import { urlFor } from "@/lib/sanity.image";
+
+export default function Home({ author }) {
+    console.log(author);
     return (
         <>
             <Head>
@@ -14,29 +23,42 @@ export default function Home() {
                     content="width=device-width, initial-scale=1"
                 />
             </Head>
-            <h1 className="mb-20 font-serif text-8xl text-black">
-                Станислав Дружинин
-            </h1>
-            <p className="w-96 font-sans text-base text-black">
-                Поэт, финалист литературных премий{" "}
-                <a
-                    className="relative after:absolute after:bottom-0 after:left-0 after:z-[-1] after:h-1 after:w-full after:origin-left after:-translate-y-1/2 after:scale-x-75 after:bg-amber-100 after:transition-transform hover:after:scale-x-100"
-                    href="https://premianasledie.ru/"
-                    target="_blank"
-                >
-                    “Наследие”
-                </a>{" "}
-                2013 и{" "}
-                <a
-                    className="relative after:absolute after:bottom-0 after:left-0 after:z-[-1] after:h-1 after:w-full after:origin-left after:-translate-y-1/2 after:scale-x-75 after:bg-amber-100 after:transition-transform hover:after:scale-x-100"
-                    href="https://eseninpremia.ru/"
-                    target="_blank"
-                >
-                    “Русь моя”
-                </a>{" "}
-                2018. Стихи переведены на немецкий, венгерский, болгарский и
-                итальянский языки.
-            </p>
+            <div>Home</div>
+            <div>
+                <PortableText value={author.bio} />
+            </div>
+            {/* <div>
+                {certificates?.map((certificate, i) => {
+                    const [width, height] = certificate.image.asset._ref
+                        .split("-")
+                        .at(2)
+                        .split("x");
+                    return (
+                        <Image
+                            src={urlFor(certificate.image).url()}
+                            alt={certificate.image.caption}
+                            width={width}
+                            height={height}
+                            key={certificate._id}
+                            priority={i <= 4 ? true : false}
+                        />
+                    );
+                })}
+            </div> */}
         </>
     );
+}
+
+Home.getLayout = function (page) {
+    return <Layout>{page}</Layout>;
+};
+
+export async function getStaticProps() {
+    const author = await getHomePageAuthor();
+
+    return {
+        props: {
+            author,
+        },
+    };
 }
