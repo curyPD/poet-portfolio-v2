@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import Link from "next/link";
+import NavLink from "./navLink";
 
 export default function AccordionItem(props) {
     const [itemHeight, setItemHeight] = useState(null);
@@ -16,12 +16,14 @@ export default function AccordionItem(props) {
 
     const poemLinkElements = props.poems.map((poem) => (
         <li key={poem._id}>
-            <Link
+            <NavLink
                 href={`/poems/${poem.slug?.current}`}
                 onClick={(e) => e.stopPropagation()}
+                className="text-red-600"
+                activeClassName="text-green-600"
             >
                 {poem.title}
-            </Link>
+            </NavLink>
         </li>
     ));
 

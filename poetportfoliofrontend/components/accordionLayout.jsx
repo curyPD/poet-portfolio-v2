@@ -34,8 +34,6 @@ export default function AccordionLayout({ children }) {
         fetchAccordionData();
     }, []);
 
-    console.log(accordionItems);
-
     return (
         <>
             <Accordion accordionItems={accordionItems} />
