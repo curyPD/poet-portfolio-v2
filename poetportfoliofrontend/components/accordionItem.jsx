@@ -16,7 +16,12 @@ export default function AccordionItem(props) {
 
     const poemLinkElements = props.poems.map((poem) => (
         <li key={poem._id}>
-            <Link href={`/poems/${poem.slug?.current}`}>{poem.title}</Link>
+            <Link
+                href={`/poems/${poem.slug?.current}`}
+                onClick={(e) => e.stopPropagation()}
+            >
+                {poem.title}
+            </Link>
         </li>
     ));
 

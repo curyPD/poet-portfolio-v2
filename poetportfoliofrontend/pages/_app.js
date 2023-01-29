@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Raleway, Playfair_Display } from "@next/font/google";
 
 const raleway = Raleway({
-    subsets: ["cyrillic"],
+    subsets: ["cyrillic", "latin"],
     variable: "--font-sans",
 });
 
