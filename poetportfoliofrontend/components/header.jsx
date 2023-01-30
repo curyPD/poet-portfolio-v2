@@ -3,15 +3,19 @@ import { useState } from "react";
 import NavLink from "./navLink";
 import MobileNav from "./mobileNav";
 
+import { AnimatePresence } from "framer-motion";
+
 export default function Header() {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
     return (
         <header>
             <div className="mx-auto flex h-20 items-center justify-end px-8 sm:px-12 lg:h-16 lg:max-w-screen-md lg:justify-start lg:px-12 xl:max-w-screen-lg">
-                {mobileNavOpen && (
-                    <MobileNav closeNav={() => setMobileNavOpen(false)} />
-                )}
+                <AnimatePresence>
+                    {mobileNavOpen && (
+                        <MobileNav closeNav={() => setMobileNavOpen(false)} />
+                    )}
+                </AnimatePresence>
                 <button
                     className="group relative z-30 h-6 w-6 focus:outline-none lg:hidden lg:h-7 lg:w-7"
                     onClick={() => setMobileNavOpen((prevState) => !prevState)}
