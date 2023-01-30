@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html lang="ru">
             <Head />
-            <body className="relative min-h-screen pb-16 lg:pb-28">
+            <body className="relative min-h-screen pb-16 selection:bg-amber-100 lg:pb-28">
                 <Main />
                 <NextScript />
             </body>

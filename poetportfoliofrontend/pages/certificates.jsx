@@ -9,7 +9,6 @@ import { getCertificatesPage } from "@/lib/sanity.client";
 import { urlFor, getDimensions } from "@/lib/sanity.image";
 
 export default function Certificates({ certificates }) {
-    console.log(certificates);
     const breakpointColumnsObj = {
         default: 2,
         767: 1,
