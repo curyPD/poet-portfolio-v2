@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import PoemContextProvider from "@/contexts/poemContext";
 
 import { Raleway, Playfair_Display } from "@next/font/google";
 
@@ -23,7 +24,9 @@ export default function App({ Component, pageProps }) {
                     --font-serif: ${notoSerifDisplay.style.fontFamily};
                 }
             `}</style>
-            {getLayout(<Component {...pageProps} />)}
+            <PoemContextProvider>
+                {getLayout(<Component {...pageProps} />)}
+            </PoemContextProvider>
         </>
     );
 }

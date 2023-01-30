@@ -12,6 +12,14 @@ module.exports = {
                 sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
                 serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        fontSize: "12px",
+                        color: "#000000",
+                    },
+                },
+            },
         },
     },
     plugins: [require("@tailwindcss/typography")],

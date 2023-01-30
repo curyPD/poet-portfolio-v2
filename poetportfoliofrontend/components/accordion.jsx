@@ -25,10 +25,12 @@ export default function Accordion(props) {
     ));
 
     return (
-        <ol
-        // className={`flex-1 ${props.curPoem ? "hidden" : "block"} lg:block`}
+        <div
+            className={`flex-1 ${
+                props.isPoemOpen ? "hidden" : "block"
+            } md:block`}
         >
-            {accordionItemElements}
-        </ol>
+            <ol className="space-y-6">{accordionItemElements}</ol>
+        </div>
     );
 }

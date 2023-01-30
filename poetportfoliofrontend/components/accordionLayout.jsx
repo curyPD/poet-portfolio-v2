@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { PoemContext } from "@/contexts/poemContext";
 
 import { getAccordionCategories, getAccordionPoems } from "@/lib/sanity.client";
 
@@ -6,6 +7,7 @@ import Accordion from "./accordion";
 
 export default function AccordionLayout({ children }) {
     const [accordionItems, setAccordionItems] = useState([]);
+    const { isPoemOpen } = useContext(PoemContext);
 
     useEffect(() => {
         const fetchAccordionData = async function () {
@@ -33,11 +35,19 @@ export default function AccordionLayout({ children }) {
         };
         fetchAccordionData();
     }, []);
-
+    console.log(accordionItems);
     return (
-        <>
-            <Accordion accordionItems={accordionItems} />
-            {children}
-        </>
+        <div className="px-8 py-10">
+            <h1 className="mb-20 font-serif text-4xl text-black">
+                Произведения
+            </h1>
+            <div className="flex flex-col-reverse gap-20 md:flex-row">
+                <Accordion
+                    isPoemOpen={isPoemOpen}
+                    accordionItems={accordionItems}
+                />
+                {children}
+            </div>
+        </div>
     );
 }
