@@ -50,11 +50,8 @@ export default function Poem({ poem }) {
 
     useEffect(() => {
         poem && setIsPoemOpen(true);
-    }, [poem]);
-
-    useEffect(() => {
         setPoemTextHTML(poem.content.replaceAll("\n", "<br />"));
-    }, []);
+    }, [poem]);
 
     const styles = {
         minHeight: parentStyle,
@@ -76,10 +73,12 @@ export default function Poem({ poem }) {
             <div className="flex-1" style={parentStyle ? styles : {}}>
                 <Link
                     href="/poems"
-                    className="mb-6 flex items-center gap-2 md:hidden"
+                    className="group mb-6 flex items-center gap-2 focus:outline-none md:hidden"
                 >
-                    <TfiAngleLeft className="h-2 w-2 text-black" />
-                    <span className="font-sans text-xs text-black">Темы</span>
+                    <TfiAngleLeft className="h-2 w-2 text-black group-focus-visible:text-neutral-500" />
+                    <span className="font-sans text-xs text-black group-focus-visible:text-neutral-500">
+                        Темы
+                    </span>
                 </Link>
 
                 <article

@@ -13,16 +13,16 @@ export default function MobileNav({ closeNav }) {
                         onClick={closeNav}
                         exact={true}
                         href="/"
-                        activeClassName="text-sm text-black lg:text-base font-semibold"
-                        className="text-sm text-black lg:text-base"
+                        activeClassName="text-sm text-black lg:text-base font-semibold focus:outline-none focus-visible:text-neutral-500"
+                        className="text-sm text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
                     >
                         Главная
                     </NavLink>
                     <NavLink
                         onClick={closeNav}
                         exact={true}
-                        className="text-sm text-black lg:text-base"
-                        activeClassName="text-sm text-black lg:text-base font-semibold"
+                        className="text-sm text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
+                        activeClassName="text-sm text-black lg:text-base font-semibold focus:outline-none focus-visible:text-neutral-500"
                         href="/certificates"
                     >
                         Дипломы
@@ -30,14 +30,14 @@ export default function MobileNav({ closeNav }) {
                     <NavLink
                         onClick={closeNav}
                         exact={true}
-                        className="text-sm text-black lg:text-base"
-                        activeClassName="text-sm text-black lg:text-base font-semibold"
+                        className="text-sm text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
+                        activeClassName="text-sm text-black lg:text-base font-semibold focus:outline-none focus-visible:text-neutral-500"
                         href="/poems"
                     >
                         Произведения
                     </NavLink>
                     <a
-                        className="text-sm text-black lg:text-base"
+                        className="text-sm text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
                         href="mailto:stas1365iv@gmail.com"
                     >
                         Написать

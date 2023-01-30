@@ -30,7 +30,7 @@ export default function Accordion(props) {
                 props.isPoemOpen ? "hidden" : "block"
             } md:block`}
         >
-            <ol className="space-y-6">{accordionItemElements}</ol>
+            <ol className="space-y-6 lg:space-y-7">{accordionItemElements}</ol>
         </div>
     );
 }

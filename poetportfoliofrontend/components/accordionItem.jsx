@@ -23,8 +23,9 @@ export default function AccordionItem(props) {
             key={poem._id}
             href={`/poems/${poem.slug?.current}`}
             onClick={(e) => e.stopPropagation()}
-            className="font-sans text-xs text-black"
-            activeClassName="text-black text-xs font-sans font-semibold"
+            className="font-sans text-xs text-black focus:outline-none focus-visible:text-neutral-500 lg:text-sm"
+            activeClassName="text-black text-xs font-sans font-semibold lg:text-sm focus:outline-none focus-visible:text-neutral-500"
+            scroll={false}
         >
             {poem.title}
         </NavLink>
@@ -32,13 +33,13 @@ export default function AccordionItem(props) {
 
     return (
         <li onClick={props.handleClick}>
-            <button className="flex cursor-pointer items-center gap-4">
+            <button className="group flex cursor-pointer items-center gap-4 focus:outline-none lg:gap-7">
                 {props.active ? (
-                    <TfiMinus className="h-3 w-3 text-black" />
+                    <TfiMinus className="h-3 w-3 text-black group-focus-visible:text-neutral-500" />
                 ) : (
-                    <TfiPlus className="h-3 w-3 text-black" />
+                    <TfiPlus className="h-3 w-3 text-black group-focus-visible:text-neutral-500" />
                 )}
-                <p className="font-sans text-sm font-medium text-black">
+                <p className="font-sans text-sm font-medium text-black group-focus-visible:text-neutral-500 lg:text-base">
                     {props.title}
                 </p>
             </button>
@@ -49,7 +50,7 @@ export default function AccordionItem(props) {
                 }`}
                 style={styles}
             >
-                <nav className="ml-7 flex flex-col space-y-4">
+                <nav className="ml-7 flex flex-col space-y-4 lg:ml-10 lg:space-y-5">
                     {poemLinkElements}
                 </nav>
             </div>

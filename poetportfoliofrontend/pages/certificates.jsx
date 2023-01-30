@@ -27,7 +27,7 @@ export default function Certificates({ certificates }) {
                     content="width=device-width, initial-scale=1"
                 />
             </Head>
-            <div className="mx-auto max-w-sm px-8 py-10 md:max-w-xl lg:max-w-3xl lg:py-16 xl:max-w-5xl xl:py-20">
+            <div className="mx-auto max-w-sm px-8 py-10 sm:px-12 md:max-w-xl lg:max-w-3xl lg:py-16 xl:max-w-5xl xl:py-20">
                 <h1 className="mb-20 text-center font-serif text-4xl text-black lg:mb-28 lg:text-5xl xl:text-7xl">
                     Дипломы
                 </h1>
