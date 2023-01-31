@@ -18,6 +18,7 @@ export default function Home({ author }) {
                     <a
                         href={value?.href}
                         target="_blank"
+                        rel="noreferrer"
                         className="relative whitespace-nowrap font-sans text-black selection:text-neutral-500 after:absolute after:left-0 after:bottom-0 after:-z-10 after:h-[3px] after:w-4/6 after:-translate-y-1/4 after:bg-amber-100 after:transition-all after:duration-200 hover:after:w-full focus:outline-none focus-visible:text-neutral-500 lg:after:h-1 lg:after:-translate-y-0"
                     >
                         {children}

@@ -51,7 +51,7 @@ export default function Poem({ poem }) {
     useEffect(() => {
         poem && setIsPoemOpen(true);
         setPoemTextHTML(poem.content.replaceAll("\n", "<br />"));
-    }, [poem]);
+    }, [poem, setIsPoemOpen]);
 
     const styles = {
         minHeight: parentStyle,

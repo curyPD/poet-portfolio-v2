@@ -10,7 +10,7 @@ export default function Poems() {
 
     useEffect(() => {
         setIsPoemOpen(false);
-    }, []);
+    }, [setIsPoemOpen]);
 
     return (
         <>
