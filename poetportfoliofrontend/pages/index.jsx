@@ -38,38 +38,32 @@ export default function Home({ author }) {
         <>
             <Head>
                 <title>Станислав Дружинин</title>
-                <meta
-                    name="description"
-                    content="Станислав Дружинин - поэт, финалист литературных премий Наследие 2013 и Русь моя 2018. Стихи переведены на немецкий, венгерский, болгарский и итальянский языки."
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
             </Head>
-            <div className="grid grid-cols-1 px-8 py-12 sm:ml-auto sm:max-w-3xl sm:grid-cols-2 sm:px-12 lg:max-w-4xl xl:max-w-6xl xl:py-20 xl:px-20 xl:pl-0">
-                <h1 className="mb-20 text-right font-serif text-5xl text-black sm:col-span-2 sm:mb-28 sm:text-6xl lg:mb-36 lg:text-7xl xl:text-8xl">
-                    {author.name}
-                </h1>
+            <article className="mx-auto max-w-screen-2xl">
+                <div className="grid grid-cols-1 px-8 py-12 sm:ml-auto sm:max-w-3xl sm:grid-cols-2 sm:px-12 lg:max-w-4xl xl:max-w-6xl xl:py-20 xl:px-20 xl:pl-0">
+                    <h1 className="mb-20 text-right font-serif text-5xl text-black sm:col-span-2 sm:mb-28 sm:text-6xl lg:mb-36 lg:text-7xl xl:text-8xl">
+                        {author.name}
+                    </h1>
 
-                <PortableText
-                    value={author.bio}
-                    components={portableTextComponents}
-                />
-                <div className="group relative w-44 justify-self-end lg:w-52">
-                    <Image
-                        src={urlFor(author.photo).url()}
-                        alt="Фотография Станислава Дружинина"
-                        width={width}
-                        height={height}
-                        priority
-                        className="xl:brightness-110 xl:saturate-0 xl:transition-all xl:duration-300 xl:group-hover:brightness-100 xl:group-hover:saturate-100"
+                    <PortableText
+                        value={author.bio}
+                        components={portableTextComponents}
                     />
-                    <div className="absolute top-0 left-0 -z-10 h-full w-full -translate-x-4 translate-y-4 border-2 border-amber-100 xl:translate-x-4 xl:-translate-y-4 xl:bg-amber-100 xl:duration-300 xl:group-hover:-translate-x-4 xl:group-hover:translate-y-4 xl:group-hover:bg-transparent">
-                        &nbsp;
+                    <div className="group relative w-44 justify-self-end lg:w-52">
+                        <Image
+                            src={urlFor(author.photo).url()}
+                            alt="Фотография Станислава Дружинина"
+                            width={width}
+                            height={height}
+                            priority
+                            className="xl:brightness-110 xl:saturate-0 xl:transition-all xl:duration-300 xl:group-hover:brightness-100 xl:group-hover:saturate-100"
+                        />
+                        <div className="absolute top-0 left-0 -z-10 h-full w-full -translate-x-4 translate-y-4 border-2 border-amber-100 xl:translate-x-4 xl:-translate-y-4 xl:bg-amber-100 xl:duration-300 xl:group-hover:-translate-x-4 xl:group-hover:translate-y-4 xl:group-hover:bg-transparent">
+                            &nbsp;
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
         </>
     );
 }

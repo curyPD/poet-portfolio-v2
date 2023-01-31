@@ -60,15 +60,7 @@ export default function Poem({ poem }) {
     return (
         <>
             <Head>
-                <title>{poem.title}</title>
-                <meta
-                    name="description"
-                    content="Станислав Дружинин - поэт, финалист литературных премий Наследие 2013 и Русь моя 2018. Стихи переведены на немецкий, венгерский, болгарский и итальянский языки."
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
+                <title>Станислав Дружинин - {poem.title}</title>
             </Head>
             <div className="flex-1" style={parentStyle ? styles : {}}>
                 <Link

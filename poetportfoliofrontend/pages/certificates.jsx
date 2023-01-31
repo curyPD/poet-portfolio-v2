@@ -16,15 +16,7 @@ export default function Certificates({ certificates }) {
     return (
         <>
             <Head>
-                <title>Дипломы</title>
-                <meta
-                    name="description"
-                    content="Станислав Дружинин - поэт, финалист литературных премий Наследие 2013 и Русь моя 2018. Стихи переведены на немецкий, венгерский, болгарский и итальянский языки."
-                />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
+                <title>Станислав Дружинин - Дипломы</title>
             </Head>
             <div className="mx-auto max-w-sm px-8 py-10 sm:px-12 md:max-w-xl lg:max-w-3xl lg:py-16 xl:max-w-5xl xl:py-20">
                 <h1 className="mb-20 text-center font-serif text-4xl text-black lg:mb-28 lg:text-5xl xl:text-7xl">
