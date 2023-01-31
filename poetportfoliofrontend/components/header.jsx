@@ -19,6 +19,7 @@ export default function Header() {
                 <button
                     className="group relative z-30 h-6 w-6 focus:outline-none lg:hidden lg:h-7 lg:w-7"
                     onClick={() => setMobileNavOpen((prevState) => !prevState)}
+                    aria-label="Toggle mobile navigation menu"
                 >
                     <span
                         className={`absolute top-1/2 left-0 h-[3px] w-full origin-center transition-transform ${
