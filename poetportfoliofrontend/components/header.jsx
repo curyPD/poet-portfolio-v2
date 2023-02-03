@@ -44,7 +44,7 @@ export default function Header() {
                     <NavLink
                         exact={true}
                         activeClassName="text-black font-sans text-sm font-medium focus:outline-none focus-visible:text-neutral-500"
-                        className="font-sans text-sm text-black focus:outline-none focus-visible:text-neutral-500"
+                        className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500"
                         href="/"
                     >
                         Главная
@@ -52,7 +52,7 @@ export default function Header() {
                     <NavLink
                         exact={true}
                         activeClassName="text-black font-sans text-sm font-medium focus:outline-none focus-visible:text-neutral-500"
-                        className="font-sans text-sm text-black focus:outline-none focus-visible:text-neutral-500"
+                        className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500"
                         href="/certificates"
                     >
                         Дипломы
@@ -60,13 +60,13 @@ export default function Header() {
                     <NavLink
                         exact={true}
                         activeClassName="text-black font-sans text-sm font-medium focus:outline-none focus-visible:text-neutral-500"
-                        className="font-sans text-sm text-black focus:outline-none focus-visible:text-neutral-500"
+                        className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500"
                         href="/poems"
                     >
                         Произведения
                     </NavLink>
                     <a
-                        className="font-sans text-sm text-black focus:outline-none focus-visible:text-neutral-500"
+                        className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500"
                         href="mailto:stas1365iv@gmail.com"
                     >
                         Написать

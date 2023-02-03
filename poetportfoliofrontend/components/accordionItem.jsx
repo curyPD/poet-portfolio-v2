@@ -23,7 +23,7 @@ export default function AccordionItem(props) {
             key={poem._id}
             href={`/poems/${poem.slug?.current}`}
             onClick={(e) => e.stopPropagation()}
-            className="font-sans text-xs text-black focus:outline-none focus-visible:text-neutral-500 lg:text-sm"
+            className="font-sans text-xs font-normal text-black focus:outline-none focus-visible:text-neutral-500 lg:text-sm"
             activeClassName="text-black text-xs font-sans font-semibold lg:text-sm focus:outline-none focus-visible:text-neutral-500"
             scroll={false}
         >

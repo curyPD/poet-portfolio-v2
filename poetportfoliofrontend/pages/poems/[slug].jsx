@@ -60,7 +60,7 @@ export default function Poem({ poem }) {
     return (
         <>
             <Head>
-                <title>Станислав Дружинин - {poem.title}</title>
+                <title>{`Станислав Дружинин - ${poem.title}`}</title>
             </Head>
             <div className="flex-1" style={parentStyle ? styles : {}}>
                 <Link
@@ -81,7 +81,7 @@ export default function Poem({ poem }) {
                         {poem.title}
                     </h2>
                     <p
-                        className="prose prose-hr:m-0 prose-hr:w-1/2 lg:prose-sm lg:prose-hr:m-0"
+                        className="prose font-sans prose-hr:m-0 prose-hr:w-1/2 lg:prose-sm lg:prose-hr:m-0"
                         dangerouslySetInnerHTML={{ __html: poemTextHTML }}
                     />
                 </article>

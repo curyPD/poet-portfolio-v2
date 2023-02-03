@@ -11,11 +11,11 @@ export default function Custom404() {
                 <p className="mb-2 font-sans text-2xl font-semibold text-black">
                     404
                 </p>
-                <p className="mb-11 font-sans text-base text-black">
+                <p className="mb-11 font-sans text-base font-normal text-black">
                     Страница не найдена
                 </p>
                 <Link
-                    className="flex items-center gap-3 font-sans text-sm text-black focus:outline-none focus-visible:text-neutral-500"
+                    className="flex items-center gap-3 font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500"
                     href="/"
                 >
                     <span>&larr;</span>

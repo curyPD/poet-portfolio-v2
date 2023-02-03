@@ -4,16 +4,11 @@ import Head from "next/head";
 
 import PoemContextProvider from "@/contexts/poemContext";
 
-import { Raleway, Playfair_Display } from "@next/font/google";
+import { Raleway } from "@next/font/google";
 
 const raleway = Raleway({
-    subsets: ["cyrillic", "latin"],
+    subsets: ["latin", "cyrillic"],
     variable: "--font-sans",
-});
-
-const notoSerifDisplay = Playfair_Display({
-    subsets: ["cyrillic"],
-    variable: "--font-serif",
 });
 
 export default function App({ Component, pageProps }) {
@@ -72,14 +67,10 @@ export default function App({ Component, pageProps }) {
                 <meta name="msapplication-TileColor" content="#da532c"></meta>
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
-            <style jsx global>{`
-                :root {
-                    --font-sans: ${raleway.style.fontFamily};
-                    --font-serif: ${notoSerifDisplay.style.fontFamily};
-                }
-            `}</style>
             <PoemContextProvider>
-                {getLayout(<Component {...pageProps} />)}
+                <div className={raleway.variable}>
+                    {getLayout(<Component {...pageProps} />)}
+                </div>
             </PoemContextProvider>
         </>
     );
