@@ -4,11 +4,18 @@ import Head from "next/head";
 
 import PoemContextProvider from "@/contexts/poemContext";
 
-import { Raleway } from "@next/font/google";
+import { Raleway, Playfair_Display } from "@next/font/google";
 
 const raleway = Raleway({
     subsets: ["latin", "cyrillic"],
     variable: "--font-sans",
+    display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+    subsets: ["cyrillic"],
+    variable: "--font-serif",
+    display: "swap",
 });
 
 export default function App({ Component, pageProps }) {
@@ -16,6 +23,12 @@ export default function App({ Component, pageProps }) {
 
     return (
         <>
+            <style jsx global>{`
+                :root {
+                    --font-sans: ${raleway.style.fontFamily};
+                    --font-serif: ${playfairDisplay.style.fontFamily};
+                }
+            `}</style>
             <Head>
                 <meta
                     name="description"
@@ -68,9 +81,7 @@ export default function App({ Component, pageProps }) {
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
             <PoemContextProvider>
-                <div className={raleway.variable}>
-                    {getLayout(<Component {...pageProps} />)}
-                </div>
+                {getLayout(<Component {...pageProps} />)}
             </PoemContextProvider>
         </>
     );

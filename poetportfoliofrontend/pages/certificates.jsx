@@ -1,15 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Playfair_Display } from "@next/font/google";
+
 import Masonry from "react-masonry-css";
 
 import Layout from "@/components/layout";
 
 import { getCertificatesPage } from "@/lib/sanity.client";
 import { urlFor, getDimensions } from "@/lib/sanity.image";
-const playfairDisplay = Playfair_Display({
-    subsets: ["cyrillic"],
-});
+
 export default function Certificates({ certificates }) {
     const breakpointColumnsObj = {
         default: 2,
@@ -21,9 +19,7 @@ export default function Certificates({ certificates }) {
                 <title>Станислав Дружинин - Дипломы</title>
             </Head>
             <div className="mx-auto max-w-sm px-8 py-10 sm:px-12 md:max-w-xl lg:max-w-3xl lg:py-16 xl:max-w-5xl xl:py-20">
-                <h1
-                    className={`${playfairDisplay.className} mb-20 text-center text-4xl font-normal text-black lg:mb-28 lg:text-5xl xl:text-7xl`}
-                >
+                <h1 className="mb-20 text-center font-serif text-4xl font-normal text-black lg:mb-28 lg:text-5xl xl:text-7xl">
                     Дипломы
                 </h1>
                 <Masonry

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Playfair_Display } from "@next/font/google";
 
 import { useMemo } from "react";
 
@@ -10,10 +9,6 @@ import { PortableText } from "@portabletext/react";
 
 import { getHomePage } from "@/lib/sanity.client";
 import { urlFor, getDimensions } from "@/lib/sanity.image";
-
-const playfairDisplay = Playfair_Display({
-    subsets: ["cyrillic"],
-});
 
 export default function Home({ author }) {
     const portableTextComponents = useMemo(() => {
@@ -47,9 +42,7 @@ export default function Home({ author }) {
             </Head>
             <article className="mx-auto max-w-screen-2xl">
                 <div className="grid grid-cols-1 px-8 py-12 sm:ml-auto sm:max-w-3xl sm:grid-cols-2 sm:px-12 lg:max-w-4xl xl:max-w-6xl xl:py-20 xl:px-20 xl:pl-0">
-                    <h1
-                        className={`${playfairDisplay.className} mb-20 text-right text-5xl font-normal text-black sm:col-span-2 sm:mb-28 sm:text-6xl lg:mb-36 lg:text-7xl xl:text-8xl`}
-                    >
+                    <h1 className="mb-20 text-right font-serif text-5xl font-normal text-black sm:col-span-2 sm:mb-28 sm:text-6xl lg:mb-36 lg:text-7xl xl:text-8xl">
                         {author.name}
                     </h1>
 
