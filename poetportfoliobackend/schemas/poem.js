@@ -17,6 +17,11 @@ export default {
       },
     },
     {
+      name: 'index',
+      type: 'number',
+      title: 'Index',
+    },
+    {
       name: 'category',
       type: 'reference',
       title: 'Category',

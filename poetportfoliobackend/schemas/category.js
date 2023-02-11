@@ -16,5 +16,10 @@ export default {
         source: 'title',
       },
     },
+    {
+      name: 'index',
+      type: 'number',
+      title: 'Index',
+    },
   ],
 }

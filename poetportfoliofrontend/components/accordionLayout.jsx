@@ -1,7 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import { PoemContext } from "@/contexts/poemContext";
 
-import { getAccordionCategories, getAccordionPoems } from "@/lib/sanity.client";
+import {
+    getAccordionCategories,
+    getAccordionPhilosophyPoems,
+    getAccordionMotherlandPoems,
+    getAccordionNaturePoems,
+    getAccordionLovePoems,
+    getAccordionMiscPoems,
+} from "@/lib/sanity.client";
 
 import Accordion from "./accordion";
 
@@ -12,20 +19,20 @@ export default function AccordionLayout({ children }) {
     useEffect(() => {
         const fetchAccordionData = async function () {
             try {
-                const [categories, poems] = await Promise.all([
+                const response = await Promise.all([
                     getAccordionCategories(),
-                    getAccordionPoems(),
+                    getAccordionPhilosophyPoems(),
+                    getAccordionMotherlandPoems(),
+                    getAccordionNaturePoems(),
+                    getAccordionLovePoems(),
+                    getAccordionMiscPoems(),
                 ]);
                 setAccordionItems(
-                    categories.map((category) => {
-                        const categorizedPoems = poems.filter(
-                            (poem) =>
-                                poem.categorySlug.current ===
-                                category.slug.current
-                        );
+                    response[0].map((category, i) => {
+                        const poems = response[i + 1];
                         return {
                             category,
-                            poems: categorizedPoems,
+                            poems,
                         };
                     })
                 );

@@ -4,7 +4,11 @@ import {
     homePageQuery,
     certificatesPageQuery,
     accordionCategoriesQuery,
-    accordionPoemsQuery,
+    accordionPhilosophyPoemsQuery,
+    accordionMotherlandPoemsQuery,
+    accordionNaturePoemsQuery,
+    accordionLovePoemsQuery,
+    accordionMiscPoemsQuery,
     poemPaths,
     poemBySlugQuery,
 } from "./sanity.queries";
@@ -23,8 +27,24 @@ export async function getAccordionCategories() {
     return await sanityClient.fetch(accordionCategoriesQuery);
 }
 
-export async function getAccordionPoems() {
-    return await sanityClient.fetch(accordionPoemsQuery);
+export async function getAccordionPhilosophyPoems() {
+    return await sanityClient.fetch(accordionPhilosophyPoemsQuery);
+}
+
+export async function getAccordionMotherlandPoems() {
+    return await sanityClient.fetch(accordionMotherlandPoemsQuery);
+}
+
+export async function getAccordionNaturePoems() {
+    return await sanityClient.fetch(accordionNaturePoemsQuery);
+}
+
+export async function getAccordionLovePoems() {
+    return await sanityClient.fetch(accordionLovePoemsQuery);
+}
+
+export async function getAccordionMiscPoems() {
+    return await sanityClient.fetch(accordionMiscPoemsQuery);
 }
 
 export async function getPoemPaths() {
