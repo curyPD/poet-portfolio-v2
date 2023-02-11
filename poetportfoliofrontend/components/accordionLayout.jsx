@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { PoemContext } from "@/contexts/poemContext";
-
 import {
     getAccordionCategories,
     getAccordionPhilosophyPoems,
@@ -11,12 +10,15 @@ import {
 } from "@/lib/sanity.client";
 
 import Accordion from "./accordion";
+import SkeletonLoader from "./skeletonLoader";
 
 export default function AccordionLayout({ children }) {
     const [accordionItems, setAccordionItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const { isPoemOpen } = useContext(PoemContext);
 
     useEffect(() => {
+        setIsLoading(true);
         const fetchAccordionData = async function () {
             try {
                 const response = await Promise.all([
@@ -36,8 +38,10 @@ export default function AccordionLayout({ children }) {
                         };
                     })
                 );
+                setIsLoading(false);
             } catch (err) {
                 console.error(err);
+                setIsLoading(false);
             }
         };
         fetchAccordionData();
@@ -47,13 +51,22 @@ export default function AccordionLayout({ children }) {
             <h1 className="mb-20 text-left font-serif text-4xl font-normal text-black lg:mb-28 lg:text-5xl xl:text-7xl">
                 Произведения
             </h1>
-            <div className="flex flex-col-reverse gap-20 md:flex-row">
-                <Accordion
-                    isPoemOpen={isPoemOpen}
-                    accordionItems={accordionItems}
-                />
-                {children}
-            </div>
+            {isLoading ? (
+                <SkeletonLoader />
+            ) : accordionItems.length === 0 ? (
+                <p className="text-xs text-black lg:text-sm 2xl:text-base">
+                    Произошла ошибка.
+                    <br /> Попробуйте перезагрузить страницу.
+                </p>
+            ) : (
+                <div className="flex flex-col-reverse gap-20 md:flex-row">
+                    <Accordion
+                        isPoemOpen={isPoemOpen}
+                        accordionItems={accordionItems}
+                    />
+                    {children}
+                </div>
+            )}
         </div>
     );
 }
