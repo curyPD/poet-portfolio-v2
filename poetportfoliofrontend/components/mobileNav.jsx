@@ -94,7 +94,7 @@ export default function MobileNav({ closeNav }) {
                     <motion.div variants={linkVariants}>
                         <a
                             className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
-                            href="mailto:stas1365iv@gmail.com"
+                            href="mailto:stasfriz@yandex.ru"
                         >
                             Написать
                         </a>

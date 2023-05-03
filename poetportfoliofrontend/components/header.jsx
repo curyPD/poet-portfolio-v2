@@ -67,7 +67,7 @@ export default function Header() {
                     </NavLink>
                     <a
                         className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500"
-                        href="mailto:stas1365iv@gmail.com"
+                        href="mailto:stasfriz@yandex.ru"
                     >
                         Написать
                     </a>
