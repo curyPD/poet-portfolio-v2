@@ -75,9 +75,9 @@ export default function MobileNav({ closeNav }) {
                             exact={true}
                             className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
                             activeClassName="text-sm font-sans text-black lg:text-base font-semibold focus:outline-none focus-visible:text-neutral-500"
-                            href="/certificates"
+                            href="/poems"
                         >
-                            Дипломы
+                            Произведения
                         </NavLink>
                     </motion.div>
                     <motion.div variants={linkVariants}>
@@ -86,9 +86,9 @@ export default function MobileNav({ closeNav }) {
                             exact={true}
                             className="font-sans text-sm font-normal text-black focus:outline-none focus-visible:text-neutral-500 lg:text-base"
                             activeClassName="text-sm font-sans text-black lg:text-base font-semibold focus:outline-none focus-visible:text-neutral-500"
-                            href="/poems"
+                            href="/certificates"
                         >
-                            Произведения
+                            Дипломы
                         </NavLink>
                     </motion.div>
                     <motion.div variants={linkVariants}>
